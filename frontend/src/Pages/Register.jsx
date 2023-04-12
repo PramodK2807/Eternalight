@@ -19,6 +19,7 @@ const Register = () => {
         console.log(name)
 
         let passVer = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
+        let emailVer = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/
 
         if(!name){
             alert('Please enter your name')
@@ -37,6 +38,11 @@ const Register = () => {
 
         if( !password.match(passVer)){
             alert('Please enter valid password')
+            return true
+        }
+
+        if(!email.match(emailVer)){
+            alert('Please enter valid email')
             return true
         }
     
